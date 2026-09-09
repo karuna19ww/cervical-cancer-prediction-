@@ -1,0 +1,173 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cervical Cancer Risk Prediction</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Cervical Cancer Risk Prediction</h1>
+
+        <p class="intro">
+            Enter the requested information to receive a model-based
+            risk estimate.
+        </p>
+
+
+        <form id="riskForm">
+
+            <!-- ABOUT YOU -->
+            <h2>About You</h2>
+
+            <label>Age</label>
+            <input type="number" id="age" min="1" required>
+
+
+            <!-- REPRODUCTIVE HISTORY -->
+            <h2>Reproductive and Sexual History</h2>
+
+            <label>Number of sexual partners</label>
+            <input type="number" id="partners" min="0" required>
+
+            <label>Age at first sexual intercourse</label>
+            <input type="number" id="first_intercourse" min="0" required>
+
+            <label>Number of pregnancies</label>
+            <input type="number" id="pregnancies" min="0" required>
+
+
+            <!-- CONTRACEPTIVE USE -->
+            <h2>Contraceptive Use</h2>
+
+            <label>Hormonal Contraceptives</label>
+
+            <select id="hormonal_contraceptives">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+
+            <label>Hormonal Contraceptives (years)</label>
+            <input
+                type="number"
+                id="hormonal_contraceptives_years"
+                min="0"
+                step="0.1"
+                value="0"
+                required
+            >
+
+
+            <label>IUD</label>
+
+            <select id="iud">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+
+            <label>IUD (years)</label>
+
+            <input
+                type="number"
+                id="iud_years"
+                min="0"
+                step="0.1"
+                value="0"
+                required
+            >
+
+
+            <!-- SMOKING -->
+            <h2>Smoking</h2>
+
+            <label>Do you smoke?</label>
+
+            <select id="smokes">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+
+            <label>Smoking duration (years)</label>
+
+            <input
+                type="number"
+                id="smokes_years"
+                min="0"
+                step="0.1"
+                value="0"
+                required
+            >
+
+
+            <!-- STD -->
+            <h2>STD History</h2>
+
+            <label>History of STDs</label>
+
+            <select id="stds">
+                <option value="no">No</option>
+                <option value="yes">Yes</option>
+            </select>
+
+            <label>Number of STDs</label>
+
+            <input
+                type="number"
+                id="stds_number"
+                min="0"
+                value="0"
+                required
+            >
+
+            <label>Number of STD diagnoses</label>
+
+            <input
+                type="number"
+                id="stds_diagnoses"
+                min="0"
+                value="0"
+                required
+            >
+
+
+            <button type="submit">
+                Predict Risk
+            </button>
+
+        </form>
+
+
+        <!-- RESULT -->
+
+        <div id="result" class="result hidden">
+
+            <h2 id="prediction"></h2>
+
+            <p>
+                Estimated probability:
+                <strong id="probability"></strong>%
+            </p>
+
+            <p class="disclaimer">
+                This is a model-based estimate and is not a medical diagnosis.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```
